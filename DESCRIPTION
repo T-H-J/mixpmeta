@@ -1,0 +1,14 @@
+Package: mixpmeta
+Title: Mixture population model approach to combine information across multiple studies
+Version: 1.0.0
+Authors@R: 
+    person("Takahiro", "Hasegawa", , "duo@mars.dti.ne.jp", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-2014-5621"))
+Description: Mixture population model approach to combine information across multiple studies for continuous and binary outcomes. This simple and robust procedure based on a mixture population concept can provide a clinically meaningful between-group contrast summary for a well-defined study population.
+License: `use_mit_license()`
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends: 
+    R (>= 2.10)
+LazyData: true
