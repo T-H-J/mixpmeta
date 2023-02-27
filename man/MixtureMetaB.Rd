@@ -5,32 +5,32 @@
 \title{Mixture population model approach for meta analysis of binary outcome}
 \usage{
 MixtureMetaB(
-  DSN = NULL,
-  WEIGHT = NULL,
-  ALPHA = 0.05,
-  NBOOT = 2000,
-  DEMOG = NULL
+  dsn = NULL,
+  weight = NULL,
+  alpha = 0.05,
+  nboot = 2000,
+  demog = NULL
 )
 }
 \arguments{
-\item{DSN}{Input data frame}
+\item{dsn}{Input data frame with study names in the first column, where variable N0 and N1 are the number of subjects (study size) in control group and treatment group, respectively, and variable R0 and R1 are the number of events in control group and treatment group, respectively.}
 
-\item{WEIGHT}{Weights used to combine studies: '"size"', '"equal"' or a numeric vector}
+\item{weight}{Weights used to combine studies: '"size"', '"equal"' or a numeric vector}
 
-\item{ALPHA}{Two-sided significance level}
+\item{alpha}{Two-sided significance level}
 
-\item{NBOOT}{Number of iterations. When default (NBOOT = 2000), 2,000 sets of realizations are generated for calculating confidence intervals of risk ratio estimated by the mixture population model approach.}
+\item{nboot}{Number of iterations. When default (nboot = 2000), 2,000 sets of realizations are generated for calculating confidence intervals of risk ratio estimated by the mixture population model approach.}
 
-\item{DEMOG}{A character vector for baseline characteristics included in input data frame}
+\item{demog}{A character vector for baseline characteristics included in the input data frame}
 }
 \value{
 A data frame
 }
 \description{
-Mixture population model approach for meta analysis of binary outcome
+Mixture population model approach to combine information across multiple studies for binary outcomes. This simple and robust procedure based on a mixture population concept can provide a clinically meaningful between-group contrast summary for a well-defined study population.
 }
 \examples{
-MixtureMetaB(DSN = EHFE, WEIGHT = "size", DEMOG = c("AGE", "MALE", "BMI", "DD", "FU"))
-MixtureMetaB(DSN = EHFE, WEIGHT = "equal")
-MixtureMetaB(DSN = EHFE, WEIGHT = rep(1, 6))
+MixtureMetaB(dsn = EHFE, weight = "size", demog = c("AGE", "MALE", "BMI", "DD", "FU"))
+MixtureMetaB(dsn = EHFE, weight = "equal")
+MixtureMetaB(dsn = EHFE, weight = rep(1, 6))
 }
